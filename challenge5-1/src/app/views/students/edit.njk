@@ -1,0 +1,37 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Editar aluno</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="card">
+        <section class="teacher-photo" style="background: url({{ student.avatar_url }}) no-repeat center center / cover"></section>
+        <section class="details">
+            <form method="POST" action="/students?_method=PUT">
+
+                <div class="header-show">
+                    <h3>Editar aluno</h3>
+        
+                    <a href="/students"><i class="material-icons home-button">home</i></a>
+                    <a href="/students">Home</a>
+        
+                </div>
+
+                {% include 'students/fields.njk' %}
+
+                <input type="hidden" name="id" value="{{ student.id }}"/>
+            </form>
+
+            <form id='form-delete' action="/students?_method=DELETE" method="POST">
+                <input type="hidden" name="id" value="{{ student.id }}"/>
+                <button type="submit">Deletar</button>
+            </form>
+
+            {% include 'confirmStudent.njk' %}
+        </section>
+    </div>
+
+{% endblock content %}
