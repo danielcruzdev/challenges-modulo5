@@ -48,7 +48,6 @@ module.exports = {
       if(!student) return res.send("Student Not Found!")
 
       student.birth = date(student.birth).iso
-      student.year = fixSchool(student.year)
 
       return res.render("students/edit", { student })
     })
