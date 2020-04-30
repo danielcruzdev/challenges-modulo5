@@ -64,6 +64,10 @@ Refatore o controller de estudantes utilizando as mesmas ideias aplicadas no con
 
 Você tem liberdade para escolher a estilização que preferir para esse desafio.
 
+### Demonstração - Clique na imagem para assitir
+
+[![Class Manager](http://i3.ytimg.com/vi/Qk0hX_p5vl0/maxresdefault.jpg)](https://www.youtube.com/watch?v=Qk0hX_p5vl0&t=1s)
+
 ## :calendar: Entrega
 
 Esse desafio **não precisa ser entregue** e não receberá correção. Após concluí-lo, adicionar esse código ao seu Github é uma boa forma de demonstrar seus conhecimentos para oportunidades futuras.
