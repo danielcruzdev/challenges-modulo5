@@ -1,0 +1,52 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Alunos</title>
+{% endblock %}
+
+{% block content %}
+<section class="card">
+    <section class="teacher-photo" style="background: url({{ student.avatar_url }}) no-repeat center center / cover"></section>
+    <section class="details">
+        
+        <div class="header-show">
+            <h3>Aluno</h3>
+
+            <a href="/students"><i class="material-icons home-button">home</i></a>
+            <a href="/students">Home</a>
+
+        </div>
+
+        <div class="item">
+            <div>Nome do Aluno</div>
+            <div>{{ student.name }}</div>
+        </div>
+
+        <div class="item">
+            <div>Idade</div>
+            <div>{{ student.age }}</div>
+        </div>
+
+        <div class="item">
+            <div>E-mail</div>
+            <div>{{ student.email }}</div>
+        </div>
+
+        <div class="item">
+            <div>Carga Horaria</div>
+            <div>{{ student.time }}</div>
+        </div>
+
+        <div class="item">
+            <div>Acompanhamento</div>
+            <div>{{ student.year }}</div>
+        </div>
+
+
+        <a href="/students/{{ student.id }}/edit" class="button">Editar</a>
+
+    </section>
+</section>
+
+{% endblock content %}

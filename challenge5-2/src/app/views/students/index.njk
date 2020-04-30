@@ -1,0 +1,68 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Alunos</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="card-index table-container">
+        <div class="new-person">
+            <a href="/students/create"><i class="material-icons add-button">add_box</i></a> 
+            <a href="/students/create">Novo aluno</a>
+        </div>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Alunos</th>
+                    <th>Email</th>
+                    <th>Ano escolar</th>
+                    <th>Visualizar</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{ student.avatar_url }})"></span>
+                            {{ student.name }}
+                        </td>
+                        <td>{{ student.email }}</td>
+                        <td class="year-index">
+                            {% if student.year == '1EM' %}
+                                1&deg; ano Ensino Médio
+                            {% elif student.year == '2EM' %}
+                                2&deg; ano Ensino Médio
+                            {% elif student.year == '3EM' %}
+                                3&deg; ano Ensino Médio
+                            {% elif student.year == '5EF' %}
+                                5&deg; ano Ensino Fundamental
+                            {% elif student.year == '6EF' %}
+                                6&deg; ano Ensino Fundamental
+                            {% elif student.year == '7EF' %}
+                                7&deg; ano Ensino Fundamental
+                            {% elif student.year == '8EF' %}
+                                8&deg; ano Ensino Fundamental
+                            {% else %}
+                                9&deg; ano Ensino Fundamental
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="/students/{{ student.id}}">
+                                <i class="material-icons">visibility</i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/students/{{ student.id}}/edit">
+                                <i class="material-icons">create</i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock content %}
