@@ -18,6 +18,7 @@
                 <th>Professores</th>
                 <th>Especialidades</th>
                 <th>Tipo de Aula</th>
+                <th>Alunos</th>
                 <th>Visualizar</th>
                 <th>Editar</th>
             </tr>
@@ -31,6 +32,7 @@
                 </td>
                 <td>{{ teacher.services }}</td>
                 <td>{{ teacher.type_class }}</td>
+                <td>{{ teacher.total_students }}</td>
                 <td><a href="/teachers/{{ teacher.id}}"><i class="material-icons">visibility</i></a></td>
                 <td><a href="/teachers/{{ teacher.id}}/edit"><i class="material-icons">create</i></a></td>
             </tr>
