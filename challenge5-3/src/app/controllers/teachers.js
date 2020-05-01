@@ -8,7 +8,7 @@ module.exports = {
     const { filter } = req.query
 
     if(filter) {
-      Teachers.findBy(filter, (Teachers) => {
+      Teachers.findBy(filter, (teachers) => {
         return res.render('teachers/index' , { teachers, filter });
       })
     }

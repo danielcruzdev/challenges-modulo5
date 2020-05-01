@@ -60,7 +60,7 @@ module.exports = {
     db.query(`SELECT teachers.*, COUNT(students) AS total_students
     FROM teachers 
     LEFT JOIN students 
-    ON(students.instructor_id = teachers.id) 
+    ON(students.teacher_id = teachers.id) 
     WHERE teachers.name ILIKE '%${filter}%'
     OR teachers.services ILIKE '%${filter}%'
     GROUP BY teachers.id
