@@ -1,0 +1,42 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <title>Professores</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="card-index table-container">
+    <div class="new-person">
+        <a href="/teachers/create"><i class="material-icons add-button">add_box</i></a> 
+        <a href="/teachers/create">Novo professor</a>
+    </div>
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Professores</th>
+                <th>Especialidades</th>
+                <th>Tipo de Aula</th>
+                <th>Visualizar</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>
+                <span style="background-image: url({{ teacher.avatar_url }})"></span>
+                {{ teacher.name }}
+                </td>
+                <td>{{ teacher.services }}</td>
+                <td>{{ teacher.type_class }}</td>
+                <td><a href="/teachers/{{ teacher.id}}"><i class="material-icons">visibility</i></a></td>
+                <td><a href="/teachers/{{ teacher.id}}/edit"><i class="material-icons">create</i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}
