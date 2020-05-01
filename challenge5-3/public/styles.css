@@ -233,10 +233,31 @@ a.button {
 .new-person {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 25px 1fr;
+    grid-template-columns: 25px 1fr 1fr;
+    align-items: center;
 }
 
-.new-person a:last-child, .header-show a {
+.new-person form {
+    display: grid;
+    grid-template-columns: 1fr 90px;
+    gap: 20px;
+}
+
+.new-person form input {
+    border-bottom: 1px solid var(--chandonnay);
+}
+
+.new-person form button {
+    padding: 8px 8px;
+    margin: 0;
+}
+
+.new-person a i {
+    font-size: 26px;
+    padding-top: 6px;
+}
+
+.new-person a, .header-show a {
     text-decoration: none;
     color:var(--chandonnay);
 }
