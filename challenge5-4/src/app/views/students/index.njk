@@ -11,6 +11,10 @@
         <div class="new-person">
             <a href="/students/create"><i class="material-icons add-button">add_box</i></a> 
             <a href="/students/create">Novo aluno</a>
+            <form action="/teachers" method="GET">
+                <input type="text" name="filter" placeholder="Nome ou especialidade" value={{filter}}>
+                <button type="submit">Filtrar</button>
+            </form>
         </div>
         <table width="100%">
             <thead>
@@ -63,6 +67,13 @@
                 {% endfor %}
             </tbody>
         </table>
+
+        <div class="pagination" 
+        data-page={{pagination.page}} 
+        data-total={{pagination.total}} 
+        data-filter={{filter}}>
+    
+        </div>
     </div>
 
 {% endblock content %}
