@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Novo professor</title>
+{% endblock %}
+
+{% block content %}
+
+<form class="card" method="POST" action="/teachers">
+    <section class="teacher-photo" style="background: url(https://images.unsplash.com/photo-1551989745-347c28b620e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80) no-repeat center center / cover"></section>
+    <section class="details">
+        
+        <div class="header-show">
+            <h3>Cadastrar professor</h3>
+
+            <a href="/teachers"><i class="material-icons home-button">home</i></a>
+            <a href="/teachers">Home</a>
+
+        </div>
+
+        {% include 'teachers/fields.njk' %}
+        
+    </section>
+</form>
+
+{% endblock content %}  

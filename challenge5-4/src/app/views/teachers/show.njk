@@ -1,0 +1,58 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Professor</title>
+{% endblock %}
+
+{% block content %}
+<section class="card">
+    <section class="teacher-photo" style="background: url({{ teacher.avatar_url }}) no-repeat center center / cover"></section>
+    <section class="details">
+        
+        <div class="header-show">
+            <h3>Professor</h3>
+
+            <a href="/teachers"><i class="material-icons home-button">home</i></a>
+            <a href="/teachers">Home</a>
+
+        </div>
+
+        <div class="item">
+            <div>Nome Professor</div>
+            <div>{{teacher.name }}</div>
+        </div>
+
+        <div class="item">
+            <div>Idade</div>
+            <div>{{teacher.age }}</div>
+        </div>
+
+        <div class="item">
+            <div>Escolaridade</div>
+            <div>{{ teacher.schooling }}</div>
+        </div>
+
+        <div class="item">
+            <div>Tipo de Aula</div>
+            <div>{{"Presencial" if teacher.type_class == "Presencial" else "À distância"}}</div>
+        </div>
+
+        <div class="item type-class">
+            <div>Acompanhamento</div>
+            {% for service in teacher.services %}
+                <span>{{ service }}</span>
+            {% endfor %}
+        </div>
+
+        <div class="item">
+            <div>Desde</div>
+            <div>{{ teacher.created_at }}</div>
+        </div>
+
+        <a href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>
+
+    </section>
+</section>
+
+{% endblock content %}
